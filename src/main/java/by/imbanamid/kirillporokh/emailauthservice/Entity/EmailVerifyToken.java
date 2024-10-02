@@ -5,24 +5,27 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-public class EmailAuthToken {
+@Table(name = "EMAIL_VERIFICATION_TOKEN")
+public class EmailVerifyToken {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
   private String token;
 
-  @ManyToOne private User user;
+  @ManyToOne
+  @JoinColumn(name = "user_id", referencedColumnName = "id")
+  private User user;
 
   private LocalDateTime expiresAt;
 
-  public EmailAuthToken(String token, User user, LocalDateTime expiresAt) {
+  public EmailVerifyToken(String token, User user, LocalDateTime expiresAt) {
     this.token = token;
     this.user = user;
     this.expiresAt = expiresAt;
   }
 
-  public EmailAuthToken() {}
+  public EmailVerifyToken() {}
 
   public Long getId() {
     return id;
