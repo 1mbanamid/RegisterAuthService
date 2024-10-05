@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Email Verification</title>
+</head>
+<body>
+<h1>Verify your email</h1>
+<p>To verify your email, please click the link below:</p>
+<a th:href="@{http://localhost:8080/api/auth/verify(token=${token})}">Verify Email</a>
+</body>
+</html>

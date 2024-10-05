@@ -4,6 +4,7 @@ import by.imbanamid.kirillporokh.emailauthservice.Entity.EmailVerifyToken;
 import by.imbanamid.kirillporokh.emailauthservice.Entity.User;
 import by.imbanamid.kirillporokh.emailauthservice.Repository.EmailVerificationTokenRepository;
 import by.imbanamid.kirillporokh.emailauthservice.Repository.UserRepository;
+import jakarta.mail.MessagingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -29,7 +30,7 @@ public class EmailAuthService {
 
   private EmailVerificationListener emailVerificationListener;
 
-  public void register(String mail, String RawPassword) {
+  public void register(String mail, String RawPassword) throws MessagingException {
     User ExistingUser = userRepository.findByEmail(mail);
 
     if (ExistingUser != null) {
@@ -65,7 +66,7 @@ public class EmailAuthService {
     return true;
   }
 
-  private void sendVerificationEmail(User user, String token) {
+  private void sendVerificationEmail(User user, String token) throws MessagingException {
     emailService.sendEmail(user.getEmail(), token);
   }
 
