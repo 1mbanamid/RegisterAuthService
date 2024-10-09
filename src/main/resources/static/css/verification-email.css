@@ -1,0 +1,123 @@
+table {
+    border-collapse: separate;
+    table-layout: fixed;
+    mso-table-lspace: 0pt;
+    mso-table-rspace: 0pt;
+}
+
+table td {
+    border-collapse: collapse;
+}
+
+.ExternalClass {
+    width: 100%;
+}
+
+.ExternalClass,
+.ExternalClass p,
+.ExternalClass span,
+.ExternalClass font,
+.ExternalClass td,
+.ExternalClass div {
+    line-height: 100%;
+}
+
+.gmail-mobile-forced-width {
+    display: none;
+}
+
+body, a, li, p, h1, h2, h3 {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+html {
+    -webkit-text-size-adjust: none !important;
+}
+
+body, #innerTable {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#innerTable img+div {
+    display: none;
+}
+
+img {
+    Margin: 0;
+    padding: 0;
+    -ms-interpolation-mode: bicubic;
+}
+
+h1, h2, h3, p, a {
+    line-height: inherit;
+    overflow-wrap: normal;
+    white-space: normal;
+    word-break: break-word;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, p {
+    min-width: 100%!important;
+    width: 100%!important;
+    max-width: 100%!important;
+    display: inline-block!important;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+a[x-apple-data-detectors] {
+    color: inherit !important;
+    text-decoration: none !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+}
+
+u + #body a {
+    color: inherit;
+    text-decoration: none;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+
+a[href^="mailto"],
+a[href^="tel"],
+a[href^="sms"] {
+    color: inherit;
+    text-decoration: none;
+}
+
+@media (min-width: 481px) {
+    .hd { display: none!important; }
+}
+
+@media (max-width: 480px) {
+    .hm { display: none!important; }
+}
+
+@media (max-width: 480px) {
+    .t11, .t15, .t24, .t26 { width: 340px!important; }
+    .t26 { padding: 30px 30px 40px!important; }
+    .t19, .t32, .t36, .t38 { width: 320px!important; }
+    .t38 { padding-left: 40px!important; padding-right: 40px!important; }
+}
+
+@media (max-width: 480px) {
+    [class~="x_t26"] { padding-left: 30px!important; padding-top: 30px!important; padding-bottom: 40px!important; padding-right: 30px!important; width: 340px!important; }
+    [class~="x_t15"] { width: 340px!important; }
+    [class~="x_t11"] { width: 340px!important; }
+    [class~="x_t19"] { width: 320px!important; }
+    [class~="x_t24"] { width: 340px!important; }
+    [class~="x_t38"] { padding-left: 40px!important; padding-right: 40px!important; width: 320px!important; }
+    [class~="x_t36"] { width: 320px!important; }
+    [class~="x_t32"] { width: 320px!important; }
+}

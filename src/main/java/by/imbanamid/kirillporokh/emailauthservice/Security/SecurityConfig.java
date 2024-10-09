@@ -58,15 +58,28 @@ public class SecurityConfig {
                 .headers(headers -> headers
                         .frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin)) // Allow same-origin frames
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/**").permitAll() // Permit all requests to authorization endpoints
-                        .requestMatchers("/h2-console/**").permitAll() // Permit all requests to H2 console
+                        .requestMatchers(
+                                "/api/auth/**",
+                                "/h2-console/**",
+                                "/css/**",
+                                "/js/**" ,
+                                "/login").permitAll()
                         .anyRequest().authenticated()  // All other requests require authentication
                 )
-                .addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class) // Add JWT filter
+                .formLogin(login -> login
+//                        .disable())
+                        .loginPage("/login")
+                        .defaultSuccessUrl("/user", true)
+                        .permitAll())
+
                 .logout(logout -> logout
-                        .logoutUrl("/api/auth/logout") // URL for logout
-                        .addLogoutHandler(logoutHandler) // Add logout handler
-                )
+                        .logoutUrl("/logout")
+                        .addLogoutHandler(logoutHandler)
+                        .logoutSuccessUrl("/login?/logout")
+                        .permitAll())
+
+                .addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class) // Add JWT filter
+
                 .build();
     }
 
